@@ -333,7 +333,6 @@ body {
 
 /* =========================================================
    KRISLIN ENTRANCE
-   ONE FULL COUNTER-CLOCKWISE ROTATION
 ========================================================= */
 
 @keyframes krislinEntrance {
@@ -663,133 +662,6 @@ body {
 .btn-yellow {
     background: #ffcc00;
     color: #222;
-}
-
-
-/* =========================================================
-   WATER DROP EFFECT
-========================================================= */
-
-.water-ripple {
-    position: absolute;
-
-    width: 35px;
-    height: 35px;
-
-    border-radius: 50%;
-
-    border:
-        4px solid
-        rgba(255,255,255,0.75);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.35) 0%,
-            rgba(137,214,255,0.18) 45%,
-            rgba(255,255,255,0) 72%
-        );
-
-    transform:
-        translate(-50%, -50%)
-        scale(0);
-
-    pointer-events: none;
-
-    z-index: 999;
-
-    box-shadow:
-        0 0 15px
-        rgba(255,255,255,0.45),
-
-        0 0 35px
-        rgba(95,190,255,0.3);
-
-    animation:
-        waterRipple
-        1.15s
-        ease-out
-        forwards;
-}
-
-.water-ripple::before,
-.water-ripple::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -12px;
-
-    border-radius: 50%;
-
-    border:
-        2px solid
-        rgba(255,255,255,0.5);
-
-    transform:
-        scale(0.35);
-
-    opacity: 0;
-
-    animation:
-        waterRing
-        1.15s
-        ease-out
-        forwards;
-}
-
-.water-ripple::after {
-    inset: -25px;
-
-    border-color:
-        rgba(142,218,255,0.35);
-
-    animation-delay:
-        0.12s;
-}
-
-@keyframes waterRipple {
-
-    0% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0);
-    }
-
-    45% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(13);
-    }
-}
-
-@keyframes waterRing {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            scale(0.25);
-    }
-
-    25% {
-        opacity: 0.75;
-    }
-
-    100% {
-        opacity: 0;
-
-        transform:
-            scale(3.5);
-    }
 }
 
 
@@ -2109,141 +1981,219 @@ body {
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — FIXED ONLY
 ========================================================= */
 
 @media (max-width:700px) {
 
-    /* PAGE 1 */
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       PAGE 1
+    ========================= */
 
     .page1-title {
-        font-size: 2rem;
+        width: 90%;
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 25px;
     }
 
     .gift-box {
-        width: 200px;
+        width: 170px;
+        max-width: 55vw;
+    }
+
+    .open-btn {
+        margin-top: 25px;
+        padding: 12px 30px;
+        font-size: 1.1rem;
     }
 
 
-    /* PAGE 2 */
+    /* =========================
+       PAGE 2
+    ========================= */
 
     .canvas,
     .final-canvas {
-        width: 95vw;
-        height: 80vh;
+        width: 94vw;
+        height: 82vh;
+        max-height: 650px;
+
+        border-width: 4px;
+        border-radius: 15px;
     }
+
+
+    /* KRISLIN */
 
     .krislin {
-        width: 170px;
-        top: 70px;
-        left: 30px;
+        width: 135px;
+        top: 75px;
+        left: 15px;
     }
+
+
+    /* PARTY HAT */
 
     .hat {
-        width: 230px;
-        top: -55px;
-        left: -10px;
+        width: 190px;
+        top: -45px;
+        left: -25px;
     }
+
+
+    /* CAKE */
 
     .cake {
-        width: 200px;
-        right: 20px;
-        top: 10px;
+        width: 155px;
+        right: 8px;
+        top: 25px;
     }
+
+
+    /* HAPPY BIRTHDAY */
 
     .title {
-        width: 250px;
-        right: 10px;
-        top: -70px;
+        width: 190px;
+        right: 5px;
+        top: 115px;
     }
+
+
+    /* MAKE A WISH */
 
     .makewish {
-        font-size: 1.3rem;
-        top: 330px;
-        right: -20px;
+        top: 285px;
+        right: -5px;
+
+        font-size: 1rem;
+        padding: 5px 14px;
     }
 
+
+    /* BUTTONS */
+
     .buttons {
-        left: 70%;
-        gap: 8px;
+        left: 50%;
+        bottom: 25px;
+
+        width: 90%;
+
+        justify-content: center;
+
+        gap: 7px;
     }
 
     .btn {
-        padding:
-            10px 18px;
-
-        font-size: 1rem;
+        padding: 9px 15px;
+        font-size: .9rem;
     }
 
 
-    /* FINAL */
+    /* =========================
+       FINAL PAGE
+    ========================= */
 
     .final-krislin {
-        width: 170px;
-        top: 70px;
+        width: 145px;
+        top: 65px;
     }
 
     .final-hat {
-        width: 230px;
-        top: -55px;
+        width: 190px;
+        top: -45px;
     }
 
+
+    /* ANIMALS */
+
     .monkey-left {
-        width: 120px;
-        left: 80px;
-        bottom: 140px;
+        width: 95px;
+        left: 45px;
+        bottom: 115px;
     }
 
     .mouse-left {
-        width: 90px;
-        left: 35px;
+        width: 70px;
+        left: 15px;
+        bottom: 45px;
     }
 
     .monkey-right {
-        width: 140px;
-        right: 15px;
+        width: 105px;
+        right: 8px;
+        bottom: 5px;
     }
 
     .cat-right {
-        width: 110px;
-        right: 70px;
-        bottom: 145px;
+        width: 85px;
+        right: 55px;
+        bottom: 115px;
     }
 
+
+    /* FINAL TEXT */
+
     .text {
-        font-size: 1rem;
-        bottom: 35px;
+        width: 90%;
+        bottom: 22px;
+
+        font-size: .85rem;
+        line-height: 1.25;
     }
 
     .highlight {
-        font-size: 1rem;
+        font-size: .9rem;
+        padding: 6px 13px;
+        margin-top: 7px;
     }
 
 
-    /* CANDLES */
+    /* =========================
+       CANDLE PAGE
+    ========================= */
 
     .countdown {
-        top: 20px;
-        left: 20px;
+        top: 15px;
+        left: 15px;
 
-        width: 65px;
-        height: 65px;
+        width: 58px;
+        height: 58px;
 
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    .candle-scene {
+        padding-top: 20px;
     }
 
     .candles {
-        gap: 10px;
+        gap: 4px;
 
-        transform:
-            scale(0.75);
+        height: auto;
 
-        margin-bottom: 0;
+        margin-bottom: 5px;
+
+        transform: scale(.52);
     }
 
     .label {
-        margin-top: -20px;
+        margin-top: -90px;
 
+        padding: 9px 18px;
+
+        font-size: .9rem;
+    }
+
+    .label.ready {
         font-size: 1rem;
     }
 
@@ -2712,16 +2662,12 @@ openBtn.addEventListener(
     "click",
     () => {
 
-        /* SHAKE GIFT */
-
         gift.classList.remove("shake");
 
         void gift.offsetWidth;
 
         gift.classList.add("shake");
 
-
-        /* START MUSIC */
 
         song.volume = 0.35;
 
@@ -2737,8 +2683,6 @@ openBtn.addEventListener(
         );
 
 
-        /* HIDE PAGE 1 */
-
         setTimeout(
             () => {
 
@@ -2749,15 +2693,11 @@ openBtn.addEventListener(
         );
 
 
-        /* SHOW PAGE 2 */
-
         setTimeout(
             () => {
 
                 page2.classList.add("show");
 
-
-                /* KRISLIN ENTRANCE */
 
                 krislin.classList.remove(
                     "enter"
@@ -2769,8 +2709,6 @@ openBtn.addEventListener(
                     "enter"
                 );
 
-
-                /* FIRST CELEBRATION */
 
                 createCelebration();
 
@@ -2832,14 +2770,10 @@ function createConfetti() {
             "confetti";
 
 
-        /* START X */
-
         confetti.style.left =
             Math.random() * 100 +
             "vw";
 
-
-        /* COLOR */
 
         confetti.style.background =
             colors[
@@ -2849,8 +2783,6 @@ function createConfetti() {
                 )
             ];
 
-
-        /* SIZE */
 
         confetti.style.width =
             (
@@ -2864,8 +2796,6 @@ function createConfetti() {
                 Math.random() * 10
             ) + "px";
 
-
-        /* SWAY */
 
         confetti.style.setProperty(
             "--sway1",
@@ -2908,8 +2838,6 @@ function createConfetti() {
         );
 
 
-        /* ROTATION */
-
         confetti.style.setProperty(
             "--rotation1",
             Math.random() * 360 +
@@ -2941,8 +2869,6 @@ function createConfetti() {
         );
 
 
-        /* DURATION */
-
         confetti.style.setProperty(
             "--duration",
             (
@@ -2952,8 +2878,6 @@ function createConfetti() {
         );
 
 
-        /* DELAY */
-
         confetti.style.setProperty(
             "--delay",
             (
@@ -2961,8 +2885,6 @@ function createConfetti() {
             ) + "s"
         );
 
-
-        /* RANDOM SHAPE */
 
         if (
             Math.random() > .78
@@ -3031,16 +2953,12 @@ function createBalloons() {
             ];
 
 
-        /* START POSITION */
-
         balloon.style.setProperty(
             "--left",
             Math.random() * 100 +
             "vw"
         );
 
-
-        /* SIZE */
 
         balloon.style.setProperty(
             "--size",
@@ -3050,8 +2968,6 @@ function createBalloons() {
             ) + "px"
         );
 
-
-        /* SIDE MOVEMENT */
 
         balloon.style.setProperty(
             "--x1",
@@ -3093,8 +3009,6 @@ function createBalloons() {
             ) + "px"
         );
 
-
-        /* ROTATION */
 
         balloon.style.setProperty(
             "--rotateStart",
@@ -3145,8 +3059,6 @@ function createBalloons() {
         );
 
 
-        /* SPEED */
-
         balloon.style.setProperty(
             "--duration",
             (
@@ -3155,8 +3067,6 @@ function createBalloons() {
             ) + "s"
         );
 
-
-        /* DELAY */
 
         balloon.style.setProperty(
             "--delay",
@@ -3185,21 +3095,16 @@ function createBalloons() {
 
 /* =========================================================
    CAKE CLICK
-   CONFETTI + BALLOONS
 ========================================================= */
 
 cake.addEventListener(
     "click",
     () => {
 
-        /* STOP FLOAT */
-
         cake.classList.remove(
             "idle"
         );
 
-
-        /* RESTART BOUNCE */
 
         cake.classList.remove(
             "bounce"
@@ -3212,14 +3117,8 @@ cake.addEventListener(
         );
 
 
-        /* CAKE CELEBRATION */
+        createCelebration();
 
-        createConfetti();
-
-        createBalloons();
-
-
-        /* RETURN TO FLOAT */
 
         setTimeout(
             () => {
@@ -3241,95 +3140,17 @@ cake.addEventListener(
 
 
 /* =========================================================
-   WATER DROP EFFECT
-========================================================= */
-
-function createWaterRipple(event) {
-
-    const canvasRect =
-        canvas.getBoundingClientRect();
-
-    const ripple =
-        document.createElement(
-            "div"
-        );
-
-    ripple.className =
-        "water-ripple";
-
-
-    /* POSITION INSIDE CANVAS */
-
-    let x =
-        event.clientX -
-        canvasRect.left;
-
-    let y =
-        event.clientY -
-        canvasRect.top;
-
-
-    /* FALLBACK TO CENTER */
-
-    if (
-        !Number.isFinite(x) ||
-        !Number.isFinite(y)
-    ) {
-
-        x =
-            canvas.clientWidth / 2;
-
-        y =
-            canvas.clientHeight / 2;
-
-    }
-
-
-    ripple.style.left =
-        x + "px";
-
-    ripple.style.top =
-        y + "px";
-
-
-    canvas.appendChild(
-        ripple
-    );
-
-
-    setTimeout(
-        () => {
-
-            ripple.remove();
-
-        },
-        1400
-    );
-
-}
-
-
-/* =========================================================
    RED YES
-   PAGE 2 → BLOW CANDLES
-   WATER EFFECT ONLY
 ========================================================= */
 
 btnRed.addEventListener(
     "click",
-    event => {
+    () => {
 
-        /* WATER DROP */
+        createConfetti();
 
-        createWaterRipple(
-            event
-        );
+        createBalloons();
 
-
-        /*
-            Move from Page 2
-            to candle page.
-        */
 
         setTimeout(
             () => {
@@ -3343,12 +3164,10 @@ btnRed.addEventListener(
                 );
 
 
-                /* START CANDLE COUNTDOWN */
-
                 startCandleCountdown();
 
             },
-            700
+            450
         );
 
     }
@@ -3534,8 +3353,6 @@ function startCandleCountdown() {
         "blow the candles";
 
 
-    /* Reset candles */
-
     candleElements.forEach(
         candle => {
 
@@ -3573,8 +3390,6 @@ function startCandleCountdown() {
                     candleCount;
 
 
-                /* COUNTDOWN PULSE */
-
                 countDisplay.classList.add(
                     "pulse"
                 );
@@ -3590,8 +3405,6 @@ function startCandleCountdown() {
                     180
                 );
 
-
-                /* FINISHED */
 
                 if (
                     candleCount === 0
@@ -3620,14 +3433,11 @@ function startCandleCountdown() {
 
 /* =========================================================
    BLOW CANDLES
-   NO CONFETTI / NO BALLOONS HERE
 ========================================================= */
 
 blowButton.addEventListener(
     "click",
     () => {
-
-        /* Don't allow early clicking */
 
         if (
             candleCount > 0
@@ -3635,8 +3445,6 @@ blowButton.addEventListener(
             return;
         }
 
-
-        /* Stop button bounce */
 
         blowButton.classList.remove(
             "ready"
@@ -3650,8 +3458,6 @@ blowButton.addEventListener(
             "💨 blowing...";
 
 
-        /* BLOW ALL CANDLES */
-
         candleElements.forEach(
             candle => {
 
@@ -3659,8 +3465,6 @@ blowButton.addEventListener(
                     "blown"
                 );
 
-
-                /* CREATE SMOKE */
 
                 const smoke =
                     document.createElement(
@@ -3678,15 +3482,17 @@ blowButton.addEventListener(
         );
 
 
-        /*
-           IMPORTANT:
-           NO CONFETTI
-           NO BALLOONS
-           DURING BLOW CANDLES
-        */
+        setTimeout(
+            () => {
 
+                createConfetti();
 
-        /* GO TO FINAL PAGE */
+                createBalloons();
+
+            },
+            500
+        );
+
 
         setTimeout(
             () => {
@@ -3699,8 +3505,6 @@ blowButton.addEventListener(
                     "show"
                 );
 
-
-                /* FINAL CELEBRATION */
 
                 setTimeout(
                     () => {
